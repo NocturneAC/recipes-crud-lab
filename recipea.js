@@ -3,13 +3,15 @@ const fs = require("fs");
 const action = process.argv[2];
 
 function readAllRecipes() {
-    fs.readFile("./recipea-data.json", "utf", (err, data) => {
+    fs.readFile("./recipea-data.json", "utf8", (err, data) => {
         const recipes = JSON.parse(data);
         console.log("Here are all your recipes:\n\n");
         for (let i = 0; i < recipes.length; i++) {
-            console.log(recipes[i].title + "\n");
-            console.log(recipes[i].text + "\n");
+            console.log(recipes[i].name + "\n");
+            console.log(recipes[i].cookingMethod + "\n");
+            console.log(recipes[i].ingredients + "\n");
         }
+        console.log(recipes.length);
     });
 }
 
@@ -19,8 +21,9 @@ function readRecipe(id) {
         console.log("Here's that recipe:\n\n");
         for (let i = 0; i < recipes.length; i++) {
             if (i === id) {
-                console.log(recipes[i].title + "\n");
-                console.log(recipes[i].text + "\n");
+                console.log(recipes[i].name + "\n");
+                console.log(recipes[i].cookingMethod + "\n");
+                console.log(recipes[i].ingredients + "\n");
             }
         }
     });
@@ -69,18 +72,20 @@ if (action === "read") {
         readRecipe(Number(id));
     }
 } else if (action === "create") {
-    const title = process.argv[3];
-    const text = process.argv[4];
-    const newRecipe = { title: title, text: text };
-    saveRecipe(newRecipe);
+    const name = process.argv[3];
+    const cookingMethod = process.argv[4];
+    const ingredients = process.argv[5];
+    const newRecipe = { name: name, cookingMethod: cookingMethod, ingredients: ingredients };
+    createRecipe(newRecipe);
 } else if (action === "delete") {
     const id = Number(process.argv[3]);
     deleteRecipe(id);
 } else if (action === "update") {
     const id = Number(process.argv[3]);
-    const title = process.argv[4];
-    const text = process.argv[5];
-    const replacingRecipe = { title: title, text: text };
+    const name = process.argv[4];
+    const cookingMethod = process.argv[5];
+    const ingredients = process.argv[6];
+    const replacingRecipe = { name: name, cookingMethod: cookingMethod, ingredients: ingredients };
     updateRecipe(id, replacingRecipe);
 } else {
     console.log(`Valid actions are "create", "read", "update", and "delete". Also, any emotions you may have are equally valid.`);

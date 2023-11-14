@@ -1,41 +1,35 @@
 [
   {
-    "name": "Spaghetti with White Sauce",
-    "cookingMethod": "stove-top boil",
-    "ingredients": [
-      "spaghetti",
-      "butter",
-      "flour",
-      "milk",
-      "salt",
-      "pepper",
-      "garlic",
-      "parmesan cheese"
-    ]
-  },
-  {
-    "name": "Spaghetti with Red Sauce",
-    "cookingMethod": "stove-top boil",
-    "ingredients": [
-      "spaghetti",
-      "tomato sauce",
-      "tomato paste",
-      "ground beef",
-      "salt",
-      "pepper",
-      "garlic",
-      "onion",
-      "parmesan cheese"
-    ]
+    "name": "Spaghetti with Meatballs and Pink Sauce",
+    "cookingMethod": "stove-top rolling boil",
+    "ingredients": "spaghetti, tomato sauce, alfredo sauce, tomato paste, parmesan cheese, ground beef, salt, pepper, garlic, onion"
   },
   {
     "name": "Fried Chicken",
     "cookingMethod": "deep fry",
-    "ingredients": ["chicken", "flour", "salt", "pepper", "garlic", "oil"]
+    "ingredients": [
+      "chicken",
+      "flour",
+      "salt",
+      "pepper",
+      "garlic",
+      "oil"
+    ]
   },
   {
     "name": "Baked Chicken",
     "cookingMethod": "oven bake",
-    "ingredients": ["chicken", "salt", "pepper", "garlic", "oil"]
+    "ingredients": [
+      "chicken",
+      "salt",
+      "pepper",
+      "garlic",
+      "oil"
+    ]
+  },
+  {
+    "name": "peanut butter jelly",
+    "cookingMethod": "counter top",
+    "ingredients": "jelly, peanut butter, bread"
   }
 ]
